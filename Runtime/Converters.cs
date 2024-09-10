@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine.UIElements;
 
 public static class Converters {
@@ -14,4 +13,3 @@ public static class Converters {
         ConverterGroups.RegisterConverterGroup(displayStyleToBool);
     }
 }
-#endif
