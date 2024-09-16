@@ -13,6 +13,10 @@ namespace Editor {
             var displayStyleToBool = new ConverterGroup("DisplayStyle To Bool");
             displayStyleToBool.AddConverter((ref StyleEnum<DisplayStyle> displayStyle) => displayStyle == DisplayStyle.Flex);
             ConverterGroups.RegisterConverterGroup(displayStyleToBool);
+            
+            var intToString = new ConverterGroup("Int To String");
+            intToString.AddConverter((ref int i) => i.ToString());
+            ConverterGroups.RegisterConverterGroup(intToString);
         }
     }
 }
