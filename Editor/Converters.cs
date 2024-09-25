@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine.UIElements;
 
-namespace Editor {
+namespace UIToolkitTools.Editor {
     public static class Converters {
         [InitializeOnLoadMethod]
         public static void RegisterConverters() {
