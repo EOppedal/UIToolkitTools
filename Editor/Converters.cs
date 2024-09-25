@@ -17,6 +17,10 @@ namespace Editor {
             var intToCurrency = new ConverterGroup("Int To Currency");
             intToCurrency.AddConverter((ref int i) => i.ToString("C"));
             ConverterGroups.RegisterConverterGroup(intToCurrency);
+            
+            var intToStringWithTwoDigits = new ConverterGroup("Int To String With Two Digits");
+            intToStringWithTwoDigits.AddConverter((ref int i) => i.ToString("00"));
+            ConverterGroups.RegisterConverterGroup(intToStringWithTwoDigits);
         }
     }
 }
