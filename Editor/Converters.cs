@@ -1,10 +1,16 @@
 ﻿#if UNITY_EDITOR
 using UnityEditor;
+#endif
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace UIToolkitTools.Editor {
     public static class Converters {
+#if UNITY_EDITOR
         [InitializeOnLoadMethod]
+#else
+        [RuntimeInitializeOnLoadMethod]
+#endif
         public static void RegisterConverters() {
             var boolToDisplayStyle = new ConverterGroup("Bool To DisplayStyle");
             boolToDisplayStyle.AddConverter((ref bool b) => b ? new StyleEnum<DisplayStyle>(DisplayStyle.Flex) : new StyleEnum<DisplayStyle>(DisplayStyle.None));
@@ -24,4 +30,3 @@ namespace UIToolkitTools.Editor {
         }
     }
 }
-#endif
