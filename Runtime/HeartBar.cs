@@ -2,13 +2,12 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace UIToolkitTools {
-    [UxmlElement] 
-    public partial class HeartBar : VisualElement {
+    [UxmlElement] public partial class HeartBar : VisualElement {
         private int _heartCount;
         private Sprite _heartIcon;
 
         [UxmlAttribute]
-        public int HeartCount {
+        public int heartCount {
             get => _heartCount;
             set {
                 _heartCount = value;
@@ -17,20 +16,20 @@ namespace UIToolkitTools {
         }
 
         [UxmlAttribute]
-        public Sprite HeartIcon {
+        public Sprite heartIcon {
             get => _heartIcon;
             set {
                 _heartIcon = value;
-                UpdateHearts(HeartCount);
+                UpdateHearts(heartCount);
             }
         }
 
-        private void UpdateHearts(int heartCount) {
+        private void UpdateHearts(int hearts) {
             if (_heartIcon == null) return;
-            
+
             Clear();
 
-            for (var i = 0; i < heartCount; i++) {
+            for (var i = 0; i < hearts; i++) {
                 var heartImage = new VisualElement {
                     style = {
                         backgroundImage = new StyleBackground(_heartIcon),
@@ -39,8 +38,9 @@ namespace UIToolkitTools {
                         height = 12
                     }
                 };
+                
                 Add(heartImage);
             }
         }
-    }   
+    }
 }
