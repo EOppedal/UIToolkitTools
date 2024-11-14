@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace UIToolkitTools.Editor {
+namespace UIToolkitTools {
     public static class Converters {
 #if UNITY_EDITOR
         [InitializeOnLoadMethod]
